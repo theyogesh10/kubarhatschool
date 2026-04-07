@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - GHSS Kubarhat</title>
+
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/gallery.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="GHSS Kubarhat">
+        <span>GHSS Kubarhat</span>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="menu-toggle" id="menuToggle">☰</div>
+    </nav>
+  </header>
+
+  <section class="content-section section-light">
+
+    <h1>Our Gallery</h1>
+
+    <!-- FILTER BUTTONS -->
+    <div class="gallery-filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="events">Events</button>
+      <button data-filter="campus">Campus</button>
+      <button data-filter="sports">Sports</button>
+      <button data-filter="industry">Industry Visit</button>
+    </div>
+
+    <!-- GALLERY GRID -->
+    <div class="gallery-grid">
+
+      <!-- EVENTS -->
+      <div class="gallery-item events"><img src="images/event1.jpg"></div>
+      <div class="gallery-item events"><img src="images/event2.jpg"></div>
+      <div class="gallery-item events"><img src="images/event3.jpg"></div>
+      <div class="gallery-item events"><img src="images/event4.jpg"></div>
+
+      <!-- CAMPUS -->
+      <div class="gallery-item campus"><img src="images/campus1.jpg"></div>
+      <div class="gallery-item campus"><img src="images/campus2.jpg"></div>
+      <div class="gallery-item campus"><img src="images/campus3.jpg"></div>
+      <div class="gallery-item campus"><img src="images/campus4.jpg"></div>
+      <div class="gallery-item campus"><img src="images/campus5.jpg"></div>
+      <div class="gallery-item campus"><img src="images/campus6.jpg"></div>
+      <div class="gallery-item campus"><img src="images/campus7.jpg"></div>
+      <!-- SPORTS -->
+      <div class="gallery-item sports"><img src="images/sport1.jpg"></div>
+      <div class="gallery-item sports"><img src="images/sport2.jpg"></div>
+      <div class="gallery-item sports"><img src="images/sport3.jpg"></div>
+
+      <!-- INDUSTRY VISIT -->
+      <div class="gallery-item industry"><img src="images/visit1.jpg"></div>
+      <div class="gallery-item industry"><img src="images/visit2.jpg"></div>
+      <div class="gallery-item industry"><img src="images/visit3.jpg"></div>
+      <div class="gallery-item industry"><img src="images/visit4.jpg"></div>
+
+
+    </div>
+
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightboxImg">
+  </div>
+
+  <footer>
+    <p>© 2026 Government Higher Secondary School Kubarhat, Jabalpur</p>
+    <p>All Rights Reserved</p>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/gallery.js"></script>
+
+</body>
+
+</html>

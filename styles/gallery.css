@@ -1,0 +1,125 @@
+/* ======================== */
+/* GALLERY PAGE CSS - FINAL */
+/* ======================== */
+
+/* TITLE */
+h1 {
+  text-align: center;
+  color: #0d47a1;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+/* FILTER BUTTONS */
+.gallery-filters {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.gallery-filters button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.gallery-filters button.active,
+.gallery-filters button:hover {
+  background: #0d47a1;
+  color: white;
+}
+
+/* GRID */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* auto-fit ensures responsive grid */
+  gap: 20px;          /* spacing between cards */
+  justify-items: center; /* center items in grid cells */
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* IMAGE CARD */
+.gallery-item {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/* ======================== */
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .gallery-item img {
+    height: 200px;
+  }
+}
+
+@media(max-width:768px){
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .gallery-item img {
+    height: 180px;
+  }
+}
+
+@media(max-width:480px){
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-item img {
+    height: 160px;
+  }
+}

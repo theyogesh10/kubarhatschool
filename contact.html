@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - GHSS Kubarhat</title>
+
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/contact.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="GHSS Kubarhat">
+        <span>GHSS Kubarhat</span>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+
+      <div class="menu-toggle" id="menuToggle">☰</div>
+    </nav>
+  </header>
+
+  <section class="content-section section-light">
+    <h1>Contact Us</h1>
+    <p>We are happy to hear from you! Reach us anytime.</p>
+
+    <div class="contact-cards">
+
+      <!-- LEFT CARD -->
+      <div class="contact-card">
+        <h2>Contact Information</h2>
+
+        <p>📍 Address: Kubarhat, Kundam, Jabalpur, Madhya Pradesh - 483110</p>
+        <p>📞 Phone: +91 7805919710</p>
+        <p>📧 Email: school@email.com</p>
+
+        <h3>Our Location</h3>
+
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1775235598610!6m8!1m7!1sO6uCKDYuXcGUctdmqUQciw!2m2!1d23.26112634253211!2d80.4564866823229!3f345.47357!4f0!5f0.7820865974627469"
+            allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- RIGHT CARD -->
+      <div class="contact-card">
+        <h2>Send a Message</h2>
+
+        <form id="contactForm">
+          <label>Name *</label>
+          <input type="text" id="name" name="name" required>
+          <label>Email *</label>
+          <input type="email" id="email" name="email" required>
+          <label>Phone</label>
+          <input type="text" id="phone" name="phone">
+          <label>Message *</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Government Higher Secondary School Kubarhat, Jabalpur</p>
+    <p>All Rights Reserved</p>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/contact.js"></script>
+
+</body>
+
+</html>

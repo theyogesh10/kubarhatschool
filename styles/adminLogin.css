@@ -1,0 +1,152 @@
+/* ======================== */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ======================== */
+/* BODY BACKGROUND (BLUE GRADIENT) */
+body {
+  min-height: 100vh;
+
+  /* 🎨 Blue Gradient (Top-Left → Bottom-Right) */
+  background: linear-gradient(
+    to bottom right,
+    #01017c,   /* dark blue */
+    #083f7d,
+    #1580d7,
+    #bbdefb    /* light blue */
+  );
+}
+
+/* ======================== */
+/* CENTERING MAIN */
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ======================== */
+/* LOGIN CONTAINER */
+.login-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 15px;
+
+  width: 90%;
+  max-width: 400px;
+
+  /* 🔥 Glass + Shadow */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+
+  animation: fadeIn 0.6s ease;
+}
+
+/* ======================== */
+/* HEADING */
+.login-container h1 {
+  text-align: center;
+  color: #0d47a1;
+  margin-bottom: 25px;
+}
+
+/* ======================== */
+/* LABEL */
+.login-container label {
+  font-weight: 500;
+  margin-top: 12px;
+  display: block;
+  color: #333;
+}
+
+/* ======================== */
+/* INPUT */
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+
+  border-radius: 8px;
+  border: 1px solid #ccc;
+
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Focus Effect */
+.login-container input:focus {
+  outline: none;
+  border-color: #0d47a1;
+  box-shadow: 0 0 6px rgba(13,71,161,0.4);
+}
+
+/* ======================== */
+/* BUTTON */
+.login-container button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(45deg, #0d47a1, #42a5f5);
+  color: white;
+
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-size: 15px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.login-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.2);
+}
+
+/* Click */
+.login-container button:active {
+  transform: scale(0.98);
+}
+
+/* ======================== */
+/* MESSAGE */
+#loginMsg {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+/* ======================== */
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================== */
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px 20px;
+  }
+
+  .login-container h1 {
+    font-size: 22px;
+  }
+}

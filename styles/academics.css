@@ -1,0 +1,50 @@
+/* ACADEMICS PAGE SPECIFIC */
+.content-section h1 {
+  color: #0d47a1;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.content-section p {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* STREAM CARDS */
+.streams {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+.stream-card {
+  flex: 1 1 250px;
+  background: #e3f2fd;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.stream-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+.stream-card h3 {
+  color: #0d47a1;
+  margin-bottom: 15px;
+}
+.stream-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.stream-card li {
+  margin-bottom: 8px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .streams { flex-direction: column; align-items: center; }
+}

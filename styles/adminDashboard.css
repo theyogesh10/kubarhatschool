@@ -1,0 +1,71 @@
+/* ======================== */
+/* MAIN FIX (HEADER SPACE) */
+main {
+  padding-top: 100px; /* header overlap fix */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ======================== */
+/* DASHBOARD CARDS */
+.dashboard-cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ======================== */
+/* CARD DESIGN */
+.card {
+  flex: 1 1 300px;
+  background: #e3f2fd;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+/* ======================== */
+/* CARD HEADER */
+.card h2 {
+  color: #0d47a1;
+  margin-bottom: 20px;
+}
+
+/* ======================== */
+/* BUTTON */
+.card button {
+  padding: 10px 20px;
+  background: #0d47a1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.card button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* ======================== */
+/* RESPONSIVE */
+@media(max-width:768px){
+  .dashboard-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}

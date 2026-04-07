@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admissions - GHSS Kubarhat</title>
+
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/admissions.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="GHSS Kubarhat">
+        <span>GHSS Kubarhat</span>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="admissions.html" class="active">Admissions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="menu-toggle" id="menuToggle">☰</div>
+    </nav>
+  </header>
+
+  <section class="admission-section">
+
+    <form id="admissionForm">
+
+      <h1>Admission Form</h1>
+
+      <div class="row">
+        <div class="col">
+          <label>Student Name *</label>
+          <input type="text" id="StudentName" name="StudentName" required>
+        </div>
+
+        <div class="col">
+          <label>Father Name *</label>
+          <input type="text" id="FatherName" name="FatherName" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Mother Name *</label>
+          <input type="text" id="MotherName" name="MotherName" required>
+        </div>
+
+        <div class="col">
+          <label>Date of Birth *</label>
+          <input type="date" id="DateOfBirth" name="DateOfBirth" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Gender *</label>
+          <select id="Gender" name="Gender" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="col">
+          <label>Category</label>
+          <select id="Category" name="Category">
+            <option value="General">General</option>
+            <option value="OBC">OBC</option>
+            <option value="SC">SC</option>
+            <option value="ST">ST</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Mobile Number *</label>
+          <input type="text" id="MobileNumber" name="MobileNumber" required>
+        </div>
+
+        <div class="col">
+          <label>Alternate Contact Number</label>
+          <input type="text" id="AlternateContactNumber" name="AlternateContactNumber">
+        </div>
+      </div>
+
+      <label>Student Email ID</label>
+      <input type="email" id="StudentEmailID" name="StudentEmailID">
+
+      <label>Address</label>
+      <input type="text" id="Address" name="Address">
+
+      <div class="row">
+        <div class="col">
+          <label>Admission Class *</label>
+          <select id="AdmissionClass" name="AdmissionClass" required>
+            <option value="">Select</option>
+            <option value="9th">9th</option>
+            <option value="10th">10th</option>
+            <option value="11th">11th</option>
+            <option value="12th">12th</option>
+          </select>
+        </div>
+
+        <div class="col">
+          <label>Stream</label>
+          <select id="Stream" name="Stream">
+            <option value="Mathematics">Science - Mathematics</option>
+            <option value="Biology">Science - Biology</option>
+            <option>Arts</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Trade</label>
+          <select id="Trade" name="Trade">
+            <option value="IT_ITES">IT / ITes</option>
+            <option value="Tourism_Hospitality">Tourism and Hospitality</option>
+          </select>
+        </div>
+
+        <div class="col">
+          <label>Previous Class Marks (%)</label>
+          <input type="number" id="PreviousClassMarks" name="PreviousClassMarks">
+        </div>
+      </div>
+
+      <label>Previous School</label>
+      <input type="text" id="PreviousSchool" name="PreviousSchool">
+
+      <div class="row">
+        <div class="col">
+          <label>Caste Certificate No</label>
+          <input type="text" id="CasteCertificateNumber" name="CasteCertificateNumber">
+        </div>
+
+        <div class="col">
+          <label>Caste Certificate Date</label>
+          <input type="date" id="CasteCertificateDate" name="CasteCertificateDate">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Income Certificate No</label>
+          <input type="text" id="IncomeCertificateNumber" name="IncomeCertificateNumber">
+        </div>
+
+        <div class="col">
+          <label>Income Certificate Date</label>
+          <input type="date" id="IncomeCertificateDate" name="IncomeCertificateDate">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>MP Tass Profile ID</label>
+          <input type="text" id="MPTassProfileID" name="MPTassProfileID">
+        </div>
+
+        <div class="col">
+          <label>OTR ID</label>
+          <input type="text" id="OTRID" name="OTRID">
+        </div>
+      </div>
+
+      <button type="submit">Submit Admission Form</button>
+
+    </form>
+
+  </section>
+
+  <footer>
+    <p>© 2026 Government Higher Secondary School Kubarhat, Jabalpur</p>
+    <p>All Rights Reserved</p>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/admissions.js"></script>
+
+</body>
+
+</html>
