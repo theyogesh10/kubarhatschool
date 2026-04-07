@@ -61,7 +61,7 @@ if(contactForm){
     };
 
     // Replace with your deployed Web App URL
-    const url = "https://script.google.com/macros/s/AKfycbwo8CItviX4Kct9P4V3pCKQZi6PRYlx2fxX8k7Xv3uyorMAke3UOsXeQtvHKcdXRbZW/exec";
+    const url = "https://script.google.com/macros/s/AKfycbweB2VdRVTLd8ZvtY6CbTw1pnShYne8CE-8dP8xofbvSDVVGNSRjZ6obJm7_skcnnLB/exec";
 
     try {
       const response = await fetch(url, {
