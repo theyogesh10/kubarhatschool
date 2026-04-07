@@ -1,13 +1,12 @@
 const contactForm = document.getElementById("contactForm");
 
-if(contactForm){
+if (contactForm) {
 
-  // Message box create
   const messageBox = document.createElement("div");
   messageBox.style.marginTop = "15px";
   contactForm.appendChild(messageBox);
 
-  contactForm.addEventListener("submit", async function(e){
+  contactForm.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     messageBox.innerHTML = "";
@@ -21,83 +20,71 @@ if(contactForm){
     let isValid = true;
 
     // Reset borders
-    [name, email, phone, message].forEach(input => input.style.border = "1px solid #ccc");
+    [name, email, phone, message].forEach(input => {
+      input.style.border = "1px solid #ccc";
+    });
 
     // Required validation
-    if(!name.value.trim()){ name.style.border = "2px solid red"; isValid=false; }
-    if(!email.value.trim()){ email.style.border = "2px solid red"; isValid=false; }
-    if(!message.value.trim()){ message.style.border = "2px solid red"; isValid=false; }
+    if (!name.value.trim()) { name.style.border = "2px solid red"; isValid = false; }
+    if (!email.value.trim()) { email.style.border = "2px solid red"; isValid = false; }
+    if (!message.value.trim()) { message.style.border = "2px solid red"; isValid = false; }
 
-    // Email format
-    if(email.value && !/^\S+@\S+\.\S+$/.test(email.value)){
+    // Email validation
+    if (email.value && !/^\S+@\S+\.\S+$/.test(email.value)) {
       email.style.border = "2px solid red";
-      messageBox.innerHTML = "Enter valid email address";
+      messageBox.innerHTML = "Enter valid email";
       return;
     }
 
-    // Phone validation (optional but must be 10 digits)
-    if(phone.value && !/^[0-9]{10}$/.test(phone.value)){
+    // Phone validation
+    if (phone.value && !/^[0-9]{10}$/.test(phone.value)) {
       phone.style.border = "2px solid red";
-      messageBox.innerHTML = "Phone number must be 10 digits";
+      messageBox.innerHTML = "Phone must be 10 digits";
       return;
     }
 
-    if(!isValid){
-      messageBox.innerHTML = "Please fill all required fields correctly!";
+    if (!isValid) {
+      messageBox.innerHTML = "Please fill required fields correctly!";
       return;
     }
 
-    // BUTTON LOADING
     const button = contactForm.querySelector("button");
     button.innerText = "Sending...";
     button.disabled = true;
 
-    // Form data keys lowercase to match Apps Script
-    const formData = {
+    // ✅ IMPORTANT: Use URLSearchParams (NO JSON)
+    const payload = new URLSearchParams({
       name: name.value.trim(),
       email: email.value.trim(),
       phone: phone.value.trim(),
       message: message.value.trim()
-    };
+    });
 
-    // Replace with your deployed Web App URL
-    const url = "https://script.google.com/macros/s/AKfycbweB2VdRVTLd8ZvtY6CbTw1pnShYne8CE-8dP8xofbvSDVVGNSRjZ6obJm7_skcnnLB/exec";
+    const url = "https://script.google.com/macros/s/AKfycbygfKtiP1-t-Pbl-5kKzufJsvOSIsYIBE8olO1COgm-M3RAXMYH2vwb_DjqQeHx_NNu/exec";
 
     try {
       const response = await fetch(url, {
         method: "POST",
-        mode: "cors", // important for CORS
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
+        body: payload
       });
-
-      if(!response.ok){
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
 
       const result = await response.json();
 
-      if(result.result === "success"){
+      if (result.result === "success") {
         messageBox.style.color = "green";
         messageBox.innerHTML = "Message sent successfully!";
         contactForm.reset();
       } else {
-        messageBox.style.color = "red";
         messageBox.innerHTML = "Failed to send message!";
         console.error(result.error);
       }
 
     } catch (error) {
-      messageBox.style.color = "red";
       messageBox.innerHTML = "Error sending message!";
       console.error(error);
     }
 
-    // RESET BUTTON
     button.innerText = "Send Message";
     button.disabled = false;
-
   });
 }
