@@ -1,91 +1,81 @@
 const admissionForm = document.getElementById("admissionForm");
 
 if (admissionForm) {
+  // Create a message box below the form
   const messageBox = document.createElement("div");
   messageBox.style.marginTop = "15px";
   admissionForm.appendChild(messageBox);
 
-  admissionForm.addEventListener("submit", async function (e) {
+  admissionForm.addEventListener("submit", async function(e) {
     e.preventDefault();
     messageBox.innerHTML = "";
     messageBox.style.color = "red";
 
     const formData = {};
-    const inputs = admissionForm.querySelectorAll("input, select");
     let isValid = true;
 
-    inputs.forEach(input => {
-      formData[input.name] = input.value.trim();
-      input.style.border = "1px solid #ccc";
+    // Collect all input/select elements inside the form
+    const inputs = admissionForm.querySelectorAll("input, select, textarea");
 
+    inputs.forEach(input => {
+      input.style.border = "1px solid #ccc"; 
+
+      // Required field check
       if (input.hasAttribute("required") && !input.value.trim()) {
         input.style.border = "2px solid red";
         isValid = false;
       }
+
+      // Email validation
+      if (input.type === "email" && input.value && !/^\S+@\S+\.\S+$/.test(input.value)) {
+        input.style.border = "2px solid red";
+        messageBox.innerHTML = "Enter valid email";
+        isValid = false;
+      }
+
+      // Mobile number validation (10 digits)
+      if ((input.name === "MobileNumber" || input.name === "AlternateContactNumber") &&
+          input.value && !/^[0-9]{10}$/.test(input.value)) {
+        input.style.border = "2px solid red";
+        messageBox.innerHTML = "Phone number must be 10 digits";
+        isValid = false;
+      }
+
+      // Add to formData using name (do NOT use id)
+      if (input.name) formData[input.name] = input.value.trim();
     });
 
-    // Mobile validation
-    const mobile = formData["MobileNumber"];
-    if (!/^[0-9]{10}$/.test(mobile)) {
-      document.getElementById("MobileNumber").style.border = "2px solid red";
-      messageBox.innerHTML = "Enter valid 10-digit Mobile Number";
-      return;
-    }
-
-    const altMobile = formData["AlternateContactNumber"];
-    if (altMobile && !/^[0-9]{10}$/.test(altMobile)) {
-      document.getElementById("AlternateContactNumber").style.border = "2px solid red";
-      messageBox.innerHTML = "Alternate number must be 10 digits";
-      return;
-    }
-
-    // Email validation
-    const email = formData["StudentEmailID"];
-    if (email && !/^\S+@\S+\.\S+$/.test(email)) {
-      document.getElementById("StudentEmailID").style.border = "2px solid red";
-      messageBox.innerHTML = "Enter valid Email";
-      return;
-    }
-
-    // Marks validation
-    const marks = formData["PreviousClassMarks"];
-    if (marks && (marks < 0 || marks > 100)) {
-      document.getElementById("PreviousClassMarks").style.border = "2px solid red";
-      messageBox.innerHTML = "Marks must be between 0 and 100";
-      return;
-    }
-
     if (!isValid) {
-      messageBox.innerHTML = "Please fill all required fields correctly!";
+      if (!messageBox.innerHTML) messageBox.innerHTML = "Please fill required fields correctly!";
       return;
     }
 
-    const button = admissionForm.querySelector("button");
+    // Submit button
+    const button = admissionForm.querySelector("button[type='submit']");
     button.innerText = "Submitting...";
     button.disabled = true;
 
-    const url="https://script.google.com/macros/s/AKfycbxreHR9Jje6EwiCtWKreK3duT1Ie8WxzNHota-TuDkGU_dWhoxGoj606lToO1zwauLG/exec";
+    // Prepare payload
+    const payload = new URLSearchParams(formData);
+    const url = "https://script.google.com/macros/s/AKfycbw3llwZSzm1ZuhQvBxjdlrzzVON0g_z3QATkhLn4toLUJVeebd1pfMjqP6LI48PD6dM/exec"; 
+
     try {
       const response = await fetch(url, {
         method: "POST",
-        mode: "cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+        body: payload
       });
 
       const result = await response.json();
 
       if (result.result === "success") {
         messageBox.style.color = "green";
-        messageBox.innerHTML = "Admission submitted successfully!";
+        messageBox.innerHTML = "Admission form submitted successfully!";
         admissionForm.reset();
       } else {
-        messageBox.style.color = "red";
-        messageBox.innerHTML = "Submission failed! Try again.";
+        messageBox.innerHTML = "Failed to submit form!";
         console.error(result.error);
       }
     } catch (error) {
-      messageBox.style.color = "red";
       messageBox.innerHTML = "Error submitting form!";
       console.error(error);
     }

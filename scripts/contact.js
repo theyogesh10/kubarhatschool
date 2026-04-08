@@ -52,7 +52,7 @@ if (contactForm) {
     button.innerText = "Sending...";
     button.disabled = true;
 
-    // ✅ IMPORTANT: Use URLSearchParams (NO JSON)
+    // Prepare payload
     const payload = new URLSearchParams({
       name: name.value.trim(),
       email: email.value.trim(),

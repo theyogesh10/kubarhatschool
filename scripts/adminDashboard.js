@@ -1,17 +1,14 @@
-// ========================
 // CHECK LOGIN
 if(sessionStorage.getItem("isAdminLoggedIn") !== "true"){
   window.location.href = "adminLogin.html";
 }
 
-// ========================
 // LOGOUT
 document.getElementById("logoutBtn").addEventListener("click", () => {
   sessionStorage.removeItem("isAdminLoggedIn");
   window.location.href = "adminLogin.html";
 });
 
-// ========================
 // OPEN GOOGLE SHEET IN NEW TAB
 function openSheet(type){
   if(type === "contact"){
@@ -22,7 +19,6 @@ function openSheet(type){
   }
 }
 
-// ========================
 // MOBILE MENU TOGGLE
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.querySelector('.nav-links');

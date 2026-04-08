@@ -1,4 +1,3 @@
-/* ======================== */
 /* MAIN FIX (HEADER SPACE) */
 main {
   padding-top: 100px; /* header overlap fix */
@@ -8,7 +7,6 @@ main {
   align-items: flex-start;
 }
 
-/* ======================== */
 /* DASHBOARD CARDS */
 .dashboard-cards {
   display: flex;
@@ -18,7 +16,6 @@ main {
   padding: 20px;
 }
 
-/* ======================== */
 /* CARD DESIGN */
 .card {
   flex: 1 1 300px;
@@ -36,14 +33,12 @@ main {
   box-shadow: 0 12px 20px rgba(0,0,0,0.15);
 }
 
-/* ======================== */
 /* CARD HEADER */
 .card h2 {
   color: #0d47a1;
   margin-bottom: 20px;
 }
 
-/* ======================== */
 /* BUTTON */
 .card button {
   padding: 10px 20px;
@@ -61,7 +56,6 @@ main {
   transform: scale(1.05);
 }
 
-/* ======================== */
 /* RESPONSIVE */
 @media(max-width:768px){
   .dashboard-cards {

@@ -1,7 +1,3 @@
-/* ======================== */
-/* CONTACT PAGE CSS - FINAL */
-/* ======================== */
-
 /* HEADING */
 .content-section h1 {
   text-align: center;
@@ -94,7 +90,6 @@
   margin-top: 15px;
 }
 
-/* ======================== */
 /* RESPONSIVE FOR MOBILE */
 @media(max-width:768px){
   .contact-cards {

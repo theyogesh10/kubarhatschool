@@ -1,7 +1,3 @@
-/* ======================== */
-/* GALLERY PAGE CSS - FINAL */
-/* ======================== */
-
 /* TITLE */
 h1 {
   text-align: center;
@@ -98,7 +94,6 @@ h1 {
   cursor: pointer;
 }
 
-/* ======================== */
 /* RESPONSIVE */
 @media(max-width:1024px){
   .gallery-item img {
